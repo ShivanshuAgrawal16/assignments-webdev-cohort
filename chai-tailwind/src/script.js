@@ -1,4 +1,4 @@
-import { styler } from "../styler.js";
+import { styler } from "./styler.js";
 
 (function () {
   function applyStyles() {
