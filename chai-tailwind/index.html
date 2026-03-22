@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChaiTailwind | Feature Deep Dive</title>
+    <script type="module" src="./src/script.js"></script>
+  </head>
+  <body class="chai-bg-gray-100 chai-m-0 chai-font-normal">
+    <header
+      class="chai-bg-gradient-to-r chai-p-20 chai-text-center chai-shadow-lg"
+    >
+      <h1 class="chai-bg-white-100 chai-fs-48 chai-font-extrabold chai-mb-2">
+        ChaiTailwind Engine
+      </h1>
+      <p class="chai-blue-100 chai-fs-18">
+        A lightweight, utility-first CSS-in-JS showcase.
+      </p>
+    </header>
+
+    <main class="chai-p-10">
+      <section
+        class="chai-bg-white chai-p-8 chai-rounded-xl chai-shadow-md chai-mb-10"
+      >
+        <h2
+          class="chai-border-blue-500 chai-pb-2 chai-font-bold chai-fs-24 chai-mb-6"
+        >
+          1. Spacing Logic (4x Multiplier)
+        </h2>
+        <div class="chai-grid chai-grid-cols-2 chai-gap-8 chai-items-center">
+          <div class="chai-bg-gray-900 chai-p-6 chai-rounded-lg">
+            <code class="chai-orange-500 chai-fs-14">chai-p-10</code><br />
+            <code class="chai-orange-500 chai-fs-14">chai-mt-5</code><br />
+            <code class="chai-orange-500 chai-fs-14">chai-gap-4</code>
+          </div>
+          <div class="chai-bg-blue-100 chai-p-10 chai-rounded-md">
+            <div class="chai-flex chai-gap-4">
+              <div
+                class="chai-bg-blue-500 chai-w-40 chai-h-40 chai-rounded-sm"
+              ></div>
+              <div
+                class="chai-bg-blue-500 chai-w-40 chai-h-40 chai-rounded-sm"
+              ></div>
+            </div>
+            <p class="chai-fs-12 chai-mt-4 chai-gray-500">
+              Result: 40px Padding, 20px Top Margin, 16px Gap.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="chai-bg-white chai-p-8 chai-rounded-xl chai-shadow-md chai-mb-10"
+      >
+        <h2
+          class="chai-border-green-500 chai-pb-2 chai-font-bold chai-fs-24 chai-mb-6"
+        >
+          2. Typography & Text Effects
+        </h2>
+        <div class="chai-grid chai-grid-cols-2 chai-gap-8">
+          <div class="chai-bg-gray-900 chai-p-6 chai-rounded-lg">
+            <code class="chai-green-500 chai-fs-14"
+              >chai-fs-24 chai-font-bold</code
+            ><br />
+            <code class="chai-green-500 chai-fs-14"
+              >chai-uppercase chai-underline</code
+            ><br />
+            <code class="chai-green-500 chai-fs-14">chai-text-shadow-md</code>
+          </div>
+          <div class="chai-flex chai-flex-col chai-justify-center">
+            <p
+              class="chai-fs-24 chai-font-bold chai-uppercase chai-underline chai-text-shadow-md chai-blue-900"
+            >
+              Styled Typography
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="chai-bg-white chai-p-8 chai-rounded-xl chai-shadow-md chai-mb-10"
+      >
+        <h2
+          class="chai-border-pink-500 chai-pb-2 chai-font-bold chai-fs-24 chai-mb-6"
+        >
+          3. Layout Engine
+        </h2>
+        <div class="chai-grid chai-grid-cols-2 chai-gap-8">
+          <div class="chai-bg-gray-900 chai-p-6 chai-rounded-lg">
+            <code class="chai-pink-500 chai-fs-14"
+              >chai-grid chai-grid-cols-3</code
+            ><br />
+            <code class="chai-pink-500 chai-fs-14">chai-flex-col-reverse</code>
+          </div>
+          <div class="chai-grid chai-grid-cols-3 chai-gap-2">
+            <div class="chai-bg-pink-500 chai-h-20 chai-rounded-sm"></div>
+            <div class="chai-bg-pink-900 chai-h-20 chai-rounded-sm"></div>
+            <div class="chai-bg-pink-500 chai-h-20 chai-rounded-sm"></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="chai-bg-white chai-p-8 chai-rounded-xl chai-shadow-md chai-mb-10"
+      >
+        <h2
+          class="chai-border-orange-500 chai-pb-2 chai-font-bold chai-fs-24 chai-mb-6"
+        >
+          4. Effects & Transforms
+        </h2>
+        <div class="chai-grid chai-grid-cols-2 chai-gap-8">
+          <div class="chai-bg-gray-900 chai-p-6 chai-rounded-lg">
+            <code class="chai-orange-500 chai-fs-14">chai-rotate-45</code><br />
+            <code class="chai-orange-500 chai-fs-14">chai-scale-110</code><br />
+            <code class="chai-orange-500 chai-fs-14">chai-opacity-50</code
+            ><br />
+            <code class="chai-orange-500 chai-fs-14">chai-cursor-pointer</code>
+          </div>
+          <div class="chai-flex chai-justify-around chai-items-center">
+            <div
+              class="chai-bg-orange-500 chai-w-40 chai-h-40 chai-rotate-45 chai-shadow-lg"
+            ></div>
+            <div
+              class="chai-bg-blue-500 chai-w-40 chai-h-40 chai-scale-110 chai-opacity-50 chai-rounded-full"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chai-bg-white chai-p-8 chai-rounded-xl chai-shadow-md">
+        <h2
+          class="chai-border-gray-900 chai-pb-2 chai-font-bold chai-fs-24 chai-mb-6"
+        >
+          5. Component Presets
+        </h2>
+        <div class="chai-grid chai-grid-cols-2 chai-gap-8">
+          <div class="chai-bg-gray-900 chai-p-6 chai-rounded-lg">
+            <code class="chai-blue-500 chai-fs-14">chai-button</code>
+          </div>
+          <div class="chai-flex chai-items-center">
+            <button class="chai-button">Brewed Button</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="chai-text-center chai-p-20 chai-gray-500 chai-fs-14">
+      &copy; 2026 ChaiTailwind Engine Showcase
+    </footer>
+  </body>
+</html>
