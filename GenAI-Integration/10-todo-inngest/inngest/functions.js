@@ -18,3 +18,29 @@ export const onTodoCreated = inngest.createFunction(
     });
   },
 );
+
+export const onTodoDeleted = inngest.createFunction(
+  {
+    id: "on-todo-deleted",
+    retries: 2,
+    triggers: [{ event: "todo/deleted" }],
+  },
+  async ({ event, step, attempt }) => {
+    const id = event.data.todo.id;
+
+    await step.run("cleanup", async () => {
+      if (attempt === 0) {
+        throw new Error(`Failed to clean up after deleting todo ${id}`);
+      }
+      return "cleaned";
+    });
+
+    await step.run("audit", async () => {
+      auditlog.push({
+        action: "deleted",
+        todoId: id,
+      });
+      return { ok: true };
+    });
+  },
+);

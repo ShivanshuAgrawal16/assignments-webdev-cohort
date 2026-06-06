@@ -1,9 +1,9 @@
 import express from "express";
 import "dotenv/config";
-import { createTodo, todos } from "./store.js";
+import { createTodo, deleteTodo, todos } from "./store.js";
 import { serve } from "inngest/express";
 import { inngest } from "./inngest/client.js";
-import { onTodoCreated } from "./inngest/functions.js";
+import { onTodoCreated, onTodoDeleted } from "./inngest/functions.js";
 
 const app = express();
 app.use(express.json());
@@ -12,7 +12,7 @@ app.use(
   "/api/inngest",
   serve({
     client: inngest,
-    functions: [onTodoCreated],
+    functions: [onTodoCreated, onTodoDeleted],
   }),
 );
 
@@ -25,6 +25,19 @@ app.post("/todos", async (req, res) => {
     data: { todo },
   });
   res.status(201).json(todo);
+});
+
+app.delete("/todos/:id", async (req, res) => {
+  const id = parseInt(req.params.id);
+  const todo = deleteTodo(id);
+  if (!todo) {
+    return res.status(404).json({ error: "Todo not found" });
+  }
+  await inngest.send({
+    name: "todo/deleted",
+    data: { todo },
+  });
+  res.json(todo);
 });
 
 app.listen(3000, () => {
